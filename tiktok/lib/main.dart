@@ -394,7 +394,10 @@ class _AnimatedLogoState extends State<AnimatedLogo>
       duration: const Duration(milliseconds: 4000),
       vsync: this,
     );
+    _controller.repeat();
+    super.initState();
   }
+
   @override
   void dispose(){
     _controller.dispose();
