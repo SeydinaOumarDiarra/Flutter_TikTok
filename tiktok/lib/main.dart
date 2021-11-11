@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'TikTok',
       debugShowCheckedModeBanner: false,
       home: MyStatefulWidget(),
@@ -69,7 +69,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         ],
         currentIndex: _selectedIndex,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Color(0xFF141518),
+        backgroundColor: const Color(0xFF141518),
         //Definir la couleur d'un icon lorsque il est cliquer
         selectedItemColor: Colors.white,
         //Definir la couleur d'un icon par defaut
@@ -123,7 +123,7 @@ class HomePage extends StatelessWidget {
     return Builder(
       builder: (BuildContext context) {
         return Container(
-          color: Color(0xFF141518),
+          color: const Color(0xFF141518),
           //Definir en enfant des widgets superposés
           child: Stack(
               children: [
@@ -141,7 +141,7 @@ class HomePage extends StatelessWidget {
 
 class VideoWidget extends StatefulWidget {
   final String videoUrl;
-  VideoWidget({Key? key, required this.videoUrl}) : super(key: key);
+  const VideoWidget({Key? key, required this.videoUrl}) : super(key: key);
 
   @override
   _VideoWidgetState createState() => _VideoWidgetState(this.videoUrl);
@@ -154,6 +154,7 @@ class _VideoWidgetState extends State<VideoWidget> {
   final String videoUrl;
   _VideoWidgetState(this.videoUrl);
 
+  @override
   void initState(){
     super.initState();
     _controller = VideoPlayerController.asset(videoUrl)
@@ -218,15 +219,15 @@ class PostContent extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         '@seybar_0112',
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w600,
                           )
                       ),
-                      SizedBox(height: 10),
-                      Text(
+                      const SizedBox(height: 10),
+                      const Text(
                         'TP sur flutter en interprettant TikTok. #ODC #ODK',
                         style: TextStyle(
                           color: Colors.white,
